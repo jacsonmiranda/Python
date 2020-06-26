@@ -88,7 +88,7 @@ if __name__ == "__main__":
     row_counter = 0
     paired_rows = 0
 
-    with open("/home/jacson/Downloads/{}/RC_{}".format(timeframe.split('-')[0],timeframe), buffering=1000) as f:
+    with open("/home/jacson/Documents/{}/RC_{}".format(timeframe.split('-')[0],timeframe), buffering=1000) as f:
         for row in f:
             #print(row)
             row_counter += 1
@@ -98,10 +98,10 @@ if __name__ == "__main__":
             created_utc = row['created_utc']
             score = row['score']
             subreddit = row['subreddit']
-            comment_id = row['name']
+            comment_id = row['link_id']
             parent_data = find_parent(parent_id)
 
-            if score >= 2:
+            if score >= 1:
                 if acceptable(body):
                     existing_comment_score = find_existing_score(parent_id)
                     if existing_comment_score:

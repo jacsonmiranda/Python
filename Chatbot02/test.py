@@ -90,7 +90,7 @@ if __name__ == '__main__':
     row_counter = 0
     paired_rows = 0
 
-    with open("/home/jacson/Downloads/{}/RC_{}".format(timeframe.split('-')[0],timeframe), buffering=1000) as x:
+    with open("/home/jacson/Documents/{}/RC_{}".format(timeframe.split('-')[0],timeframe), buffering=1000) as x:
         for row in x:
             row_counter += 1
             row = json.loads(row)
@@ -116,5 +116,5 @@ if __name__ == '__main__':
                         else:
                             sql_insert_no_parent(comment_id,parent_id,body,subreddit,created_utc,score)
 
-            if row_counter % 100000 == 0:
+            if row_counter % 10000 == 0:
                 print("Total rows read: {}, paired_rows: {}, Time: {}".format(row_counter, paired_rows, str(datetime.now())))
