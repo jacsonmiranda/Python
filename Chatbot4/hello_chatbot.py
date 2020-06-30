@@ -10,8 +10,13 @@ if __name__ == '__main__':
         content = f.read()
         from_data = content.split('\n')
 
-    for n, _ in enumerate(to_data[:-1]):
-        print(30*'_')
-        print('>',from_data[n])
-        print()
-        print('Reply:',to_data[n])
+#    for n, _ in enumerate(to_data[:-1]):
+#        print(30*'_')
+#        print('>',from_data[n])
+#        print()
+#        print('Reply:',to_data[n])
+    while True:
+        for n, _ in enumerate(to_data[:-1]):
+            quest = input('Você: ')
+            response = to_data[n]
+            print('Bot: ',response)
