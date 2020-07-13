@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*-
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-bot = ChatBot('Jack',
+
+bot = ChatBot(
+    'Jacson',
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
     logic_adapters=[
         {
@@ -10,21 +11,20 @@ bot = ChatBot('Jack',
         },
         {
             'import_path': 'chatterbot.logic.SpecificResponseAdapter',
-            'input_text': 'goodd',
-            'output_text': 'ok '
+            'input_text': 'socorro',
+            'output_text': 'seu caso eh urgente'
         }
     ]
 )
 
 trainer = ListTrainer(bot)
 
-conv = ['oi', 'olá']
-
-trainer.train(conv)
+trainer.train([
+    'oi',
+    'bom dia'
+])
 
 while True:
-	quest = input('Você: ')
-
-	response = bot.get_response(quest)
-
-	print('Bot:', response)
+    quest = input('Voce: ')
+    response = bot.get_response(quest)
+    print('Bot: ', response)

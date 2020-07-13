@@ -1,19 +1,32 @@
 # -*- coding: utf-8 -*-
 from chatterbot import ChatBot
-from chatterbot.trainers  import ChatterBotCorpusTrainer
-chatterbot.response_selection.get_most_frequent_response(input_statement, response_list, storage=None)
+from chatterbot.trainers  import ListTrainer
 
-chatbot = ChatBot('Jack')
+bot = ChatBot(
+    'Jacson',
+    storage_adapter='chatterbot.storage.SQLStorageAdapter',
+    logic_adapters=[
+        {
+            'import_path': 'chatterbot.logic.BestMatch'
+        },
+        {
+            'import_path': 'chatterbot.logic.SpecificResponseAdapter',
+            'input_text': 'socorro',
+            'output_text': 'seu caso eh urgente'
+        }
+    ]
+)
 
-trainer = ChatterBotCorpusTrainer(chatbot)
-trainer.train("chatterbot.corpus.english.health")
+trainer = ListTrainer(bot)
 
+# Train the chat bot with a few responses
+trainer.train([
+    'oi',
+    'bom dia'
+])
+
+# Get a response for some unexpected input
 while True:
-    quest = input('Você: ')
-    response = chatbot.get_response(quest)
-    if(quest == "dying")
-    print('Bot: ',response)
-
-see this
-
-https://chatterbot.readthedocs.io/en/stable/logic/index.html
+    quest = input('Voce: ')
+    response = bot.get_response(quest)
+    print(response)
