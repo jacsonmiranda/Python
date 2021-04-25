@@ -1,0 +1,36 @@
+{"intents": [
+        {"tag": "saudação",
+         "patterns": ["Oi", "Bom dia", "Tudo bem?", "Olá", "Oie", "Boa tarde", "Boa noite"],
+         "responses": ["Oi", "Bom dia", "Bom te ver aqui", "Olá", "Oie", "Boa tarde", "Boa noite"],
+         "context_set": ""
+        },
+        {"tag": "tchau",
+         "patterns": ["Tchau, até mais!", "Até logo", "Tchau"],
+         "responses": ["Até mais", "Obrigado por aparecer", "Boa semana"]
+        },
+        {"tag": "Obrigado",
+         "patterns": ["Obrigado", "Muito obrigado"],
+         "responses": ["De nada!", "Foi um prazer"]
+        },
+        {"tag": "Local",
+         "patterns": ["Qual é a sua localização?", "Onde está?"],
+         "responses": ["Estou em casa", "No trabalho"]
+        },
+        {"tag": "Clima",
+         "patterns": ["Como está o clima?", "O clima está bom?", "Como está o tempo ai?"],
+         "responses": ["Muito bom!", "Não sai para fora ainda", "Bom"]
+        },
+        {"tag": "Nome",
+         "patterns": ["Qual é seu nome?", "Como você se chama?", "Quem é você, tem um nome?"],
+         "responses": ["Meu nome é Lula!", "Lula", "Pode me chamar de lulinha"]
+        },
+        {"tag": "Ocupação",
+         "patterns": ["O que você faz?", "você trabalha?", "qual a sua ocupação?"],
+         "responses": ["Estou aqui para te ajudar!", "Ajudo pessoas", "Responder perguntas"]
+        },
+        {"tag": "unknown",
+         "patterns": [""],
+         "responses": ["Não entendi, pode repetir?", "O que você falou?", "Não está claro para mim ainda", "Qual é a sua dúvida?", "Pode perguntar novamente?"]
+        }
+   ]
+}

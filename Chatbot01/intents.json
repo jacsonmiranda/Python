@@ -1,0 +1,24 @@
+{"intents": [
+        {"tag": "saudação",
+         "patterns": ["Oi", "Bom dia", "Tudo bem?", "Olá", "Oie"],
+         "responses": ["Ok", "Bom te ver aqui"],
+         "context_set": ""
+        },
+        {"tag": "tchau",
+         "patterns": ["Até", "Até logo", "Tchau"],
+         "responses": ["Obrigado por aparecer", "Bom findi"]
+        },
+        {"tag": "Obrigado",
+         "patterns": ["Obrigado", "Muito obrigado"],
+         "responses": ["De nada!", "Foi um prazer"]
+        },
+        {"tag": "Local",
+         "patterns": ["Qual é a sua localização?", "Onde está?"],
+         "responses": ["Estou em casa", "No trabalho"]
+        },
+        {"tag": "Tempo",
+         "patterns": ["Como está o tempo?", "Chuvendo?"],
+         "responses": ["Muito bom!", "Não", "Bom"]
+        }
+   ]
+}
